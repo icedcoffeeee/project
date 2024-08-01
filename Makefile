@@ -13,10 +13,10 @@ RUN = $(if $(findstring r, $(MAKEFLAGS)),./${OUT_EXE},${BLANK})
 
 .PHONY: all
 all:
-	echo Compiling...
-	echo run with -r to open after compilation.
-	echo run with -R to compile in release mode.
-	echo run with `config` to generate .clangd.
+	@echo "Compiling..."
+	@echo "run with -r to open after compilation."
+	@echo "run with -R to compile in release mode."
+	@echo "run with `config` to generate .clangd."
 	@if (-not (Test-Path ${OUT_DIR})){ mkdir ${OUT_DIR} }
 	${CMD} ${FLAGS}
 	${RUN}
